@@ -1,0 +1,39 @@
+name: "system build"
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3.5.2
+        with:
+          fetch-depth: 0
+
+      - uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Flake Checks
+        run: |
+          rm flake.nix
+          sed "s/{{hostname}}/$(hostname)/g" flake.mustache > flake.nix
+          nix flake check -v --show-trace
+        timeout-minutes: 240
+
+      # - name: Run build (requires setting the hostname to CI)
+      #   run: |
+      #     nix build ./\#darwinConfigurations.ci.system
+      #     ./result/sw/bin/darwin-rebuild switch --flake ./\#darwinConfigurations.ci.system
