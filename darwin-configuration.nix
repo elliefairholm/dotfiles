@@ -130,7 +130,11 @@
     };
 
     taps = [ "homebrew/core" "homebrew/cask" ];
-    brews = [ "mas" "asciinema" ];
+    brews = [ 
+      "mas"
+      "asciinema"
+      "exercism"
+    ];
 
     casks = [
       "chromium"
