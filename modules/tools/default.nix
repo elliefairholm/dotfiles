@@ -16,6 +16,7 @@
     tig
     tree
     peco
+    elixir_1_16
 
     # lsp
     elixir_ls
