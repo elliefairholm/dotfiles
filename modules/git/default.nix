@@ -11,19 +11,19 @@ in {
   programs.git = {
     enable = true;
 
-    delta = {
-      enable = true;
-      options = {
-        syntax-theme = "Monokai Extended Bright";
-        features = "side-by-side line-numbers decorations";
-        whitespace-error-style = "22 reverse";
-        decorations = {
-          commit-decoration-style = "bold yellow box ul";
-          file-style = "bold yellow ul";
-          file-decoration-style = "none";
-        };
-      };
-    };
+    #delta = {
+    #  enable = true;
+    #  options = {
+    #    syntax-theme = "Monokai Extended Bright";
+    #    features = "side-by-side line-numbers decorations";
+    #   whitespace-error-style = "22 reverse";
+    #    decorations = {
+    #      commit-decoration-style = "bold yellow box ul";
+    #      file-style = "bold yellow ul";
+    #      file-decoration-style = "none";
+    #    };
+    #  };
+    #};
 
     lfs.enable = true;
 

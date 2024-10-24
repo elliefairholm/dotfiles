@@ -2,6 +2,7 @@
 
 {
   system.stateVersion = 5;
+  ids.gids.nixbld = 30000;
   environment.shells = [ pkgs.zsh ];
   # https://github.com/LnL7/nix-darwin/issues/165
   environment.etc = {
