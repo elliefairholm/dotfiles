@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+  system.stateVersion = 5;
   environment.shells = [ pkgs.zsh ];
   # https://github.com/LnL7/nix-darwin/issues/165
   environment.etc = {
@@ -31,7 +32,7 @@
   nix = {
     configureBuildUsers = true;
     settings = { trusted-users = [ "root" "ellie" ]; };
-    package = pkgs.nixVersions.latest;
+    package = pkgs.nixVersions.git;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true

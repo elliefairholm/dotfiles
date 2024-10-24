@@ -17,12 +17,13 @@
     tree
     peco
     elixir_1_16
+    ngrok
 
     # lsp
     elixir_ls
     erlang-ls
     terraform-ls
-    rnix-lsp
+    #rnix-lsp
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.vim-language-server
     nodePackages.bash-language-server
@@ -33,7 +34,7 @@
     rust-analyzer
     rustfmt
     hadolint
-    nixfmt
+    nixfmt-classic
     tflint
     # nodePackages.textlint
     nodePackages.prettier
