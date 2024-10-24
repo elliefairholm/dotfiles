@@ -26,13 +26,12 @@
   programs.nix-index.enable = true;
   programs.zsh.enable = true;
 
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [ (nerdfonts.override { fonts = [ "Iosevka" ]; }) ];
+  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "Iosevka" ]; }) ];
 
   nix = {
     configureBuildUsers = true;
     settings = { trusted-users = [ "root" "ellie" ]; };
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
