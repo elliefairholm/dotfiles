@@ -18,6 +18,8 @@
     peco
     elixir_1_16
     ngrok
+    imagemagick
+    jpegoptim
 
     # lsp
     elixir_ls
@@ -49,6 +51,7 @@
   programs.bat.enable = true;
   programs.fzf.enable = true;
   programs.gpg.enable = true;
+  programs.neovim.enable = true;
 
   # MAYBE MOVE TO SHELL/TERMINAL module
   programs.lsd = {

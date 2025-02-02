@@ -130,11 +130,11 @@
       lockfiles = true;
     };
 
-    taps = [ "homebrew/core" "homebrew/cask" ];
+    # taps = [ "homebrew/core" "homebrew/cask" ];
     brews = [ 
       "mas"
-      "asciinema"
-      "exercism"
+      # "asciinema"
+      # "exercism"
     ];
 
     casks = [
