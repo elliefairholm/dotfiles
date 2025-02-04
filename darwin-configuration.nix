@@ -2,7 +2,8 @@
 
 {
   system.stateVersion = 5;
-  ids.gids.nixbld = 30000;
+#  ids.gids.nixbld = 30000;
+#  ids.uids.nixbld = 350;
   environment.shells = [ pkgs.zsh ];
   # https://github.com/LnL7/nix-darwin/issues/165
   environment.etc = {
@@ -17,8 +18,8 @@
 
   users = {
     users = {
-      ellie = {
-        home = "/Users/ellie";
+      elliefairholm = {
+        home = "/Users/elliefairholm";
         shell = pkgs.zsh;
       };
     };
@@ -31,8 +32,8 @@
   fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "Iosevka" ]; }) ];
 
   nix = {
-    configureBuildUsers = true;
-    settings = { trusted-users = [ "root" "ellie" ]; };
+    #configureBuildUsers = true;
+    settings = { trusted-users = [ "root" "elliefairholm" ]; };
     package = pkgs.nixVersions.git;
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -44,6 +45,8 @@
       options = "--delete-older-than 14d";
     };
   };
+
+  #ids.uids.nixbld = lib.mkForce 30000;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -145,9 +148,8 @@
       "adobe-acrobat-reader"
       "1password"
       "docker"
-      "recordit"
       "spotify"
-      "visual-studio-code"
+      "windsurf"
       "insomnia"
     ];
 

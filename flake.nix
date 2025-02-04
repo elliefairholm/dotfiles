@@ -16,13 +16,13 @@
   nixConfig = {
     extra-trusted-public-keys = [
       "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw="
-      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-      "pepo.cachix.org-1:8sELuSHMV0vqHtuvnzKh3DCzb/+u+PtCY4Gl6V2blCg="
+    #  "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+    #  "pepo.cachix.org-1:8sELuSHMV0vqHtuvnzKh3DCzb/+u+PtCY4Gl6V2blCg="
     ];
     extra-substituters = [
       "https://devenv.cachix.org"
-      "https://nixpkgs-terraform.cachix.org"
-      "https://pepo.cachix.org"
+    #  "https://nixpkgs-terraform.cachix.org"
+    #  "https://pepo.cachix.org"
     ];
   };
 
@@ -40,7 +40,7 @@
             nixpkgs.overlays = [ nur.overlay ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.ellie = import ./home.nix;
+            home-manager.users.elliefairholm = import ./home.nix;
             home-manager.extraSpecialArgs = { inherit devenv; };
           }
         ];

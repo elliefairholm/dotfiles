@@ -25,7 +25,12 @@ fi
 if ! which -s nix; then
     # Install Nix
     echo "Nix not installed, installing now..."
-    sh <(curl -L https://nixos.org/nix/install) --daemon
+    curl \
+  	--proto '=https' \
+  	--tlsv1.2 \
+  	-sSf \
+  	-L https://install.determinate.systems/nix \
+    | sh -s -- install  
 fi
 
 # (if M1) softwareupdate --install-rosetta --agree-to-license
