@@ -40,7 +40,10 @@ in {
       "mergetool \"nvr\"" = {
         cmd = "nvr -s -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd J | wincmd ='";
       };
-      diff = { tool = "nvr"; };
+      diff = {
+        "sopsd".textconv = "sops -d";
+        tool = "nvr";
+      };
       init = { defaultBranch = "main"; };
       merge = {
         tool = "nvr";

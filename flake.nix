@@ -37,7 +37,7 @@
         common = [
           home-manager.darwinModules.home-manager
           {
-            nixpkgs.overlays = [ nur.overlay ];
+            nixpkgs.overlays = [ nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.elliefairholm = import ./home.nix;

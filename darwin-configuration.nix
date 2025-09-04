@@ -29,12 +29,14 @@
   programs.nix-index.enable = true;
   programs.zsh.enable = true;
 
-  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "Iosevka" ]; }) ];
+  fonts.packages = [ 
+    pkgs.nerd-fonts.iosevka 
+  ];
 
   nix = {
     #configureBuildUsers = true;
     settings = { trusted-users = [ "root" "elliefairholm" ]; };
-    package = pkgs.nixVersions.git;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -113,25 +115,23 @@
     skhdConfig = builtins.readFile ./conf.d/skhd.conf;
   };
 
-  services.nix-daemon.enable = true;
-
   ############
   # Homebrew #
   ############
 
   homebrew = {
     enable = true;
-    onActivation = {
-      upgrade = true;
-      autoUpdate = true;
-      cleanup = "zap";
-    };
+    # onActivation = {
+    #   upgrade = true;
+    #   autoUpdate = true;
+    #   cleanup = "zap";
+    # };
 
-    global = {
-      autoUpdate = true;
-      brewfile = true;
-      lockfiles = true;
-    };
+    # global = {
+    #   autoUpdate = true;
+    #   brewfile = true;
+    #   lockfiles = true;
+    # };
 
     # taps = [ "homebrew/core" "homebrew/cask" ];
     brews = [ 
@@ -151,6 +151,7 @@
       "spotify"
       "windsurf"
       "insomnia"
+      "slack"
     ];
 
     masApps = {
@@ -164,6 +165,5 @@
   };
 
   environment.variables.LANG = "en_GB.UTF-8";
-  environment.loginShell = "${pkgs.zsh}/bin/zsh -l";
-  services.activate-system.enable = true;
+  # environment.loginShell = "${pkgs.zsh}/bin/zsh -l";
 }

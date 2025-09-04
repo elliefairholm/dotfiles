@@ -3,7 +3,7 @@
   # check https://github.com/jmackie/dotfiles/blob/main/modules/tools/default.nix
   home.packages = [ devenv ] ++ (with pkgs; [
     neovim-remote
-    (nerdfonts.override { fonts = [ "Iosevka" ]; })
+    nerd-fonts.iosevka
     unixtools.watch
     fortune
     fd
@@ -16,10 +16,16 @@
     tig
     tree
     peco
-    elixir_1_16
+    elixir
+    terraform
     ngrok
     imagemagick
     jpegoptim
+    postgresql
+    awscli2
+    ssm-session-manager-plugin
+    redis
+
 
     # lsp
     elixir_ls
