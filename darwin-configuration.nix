@@ -152,6 +152,7 @@
       "windsurf"
       "insomnia"
       "slack"
+      "insta360-studio"
     ];
 
     masApps = {
