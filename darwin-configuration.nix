@@ -59,6 +59,8 @@
   time.timeZone = "Europe/London";
 
   system = {
+    primaryUser = "elliefairholm";
+
     activationScripts.postActivation.text = ''
       # Shows battery percentage
       defaults write com.apple.menuextra.battery ShowPercent YES; killall SystemUIServer
@@ -153,6 +155,7 @@
       "insomnia"
       "slack"
       "insta360-studio"
+      "mullvadvpn"
     ];
 
     masApps = {

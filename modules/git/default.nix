@@ -27,15 +27,16 @@ in {
 
     lfs.enable = true;
 
-    userEmail = gitconfig.userEmail;
-    userName = gitconfig.userName;
-
     signing = {
       key = gitconfig.gpgKey;
       signByDefault = false;
     };
 
-    extraConfig = {
+    settings = {
+      user = {
+        email = gitconfig.userEmail;
+        name = gitconfig.userName;
+      };
       "difftool \"nvr\"" = { cmd = "nvr -s -d $LOCAL $REMOTE"; };
       "mergetool \"nvr\"" = {
         cmd = "nvr -s -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd J | wincmd ='";

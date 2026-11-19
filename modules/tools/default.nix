@@ -75,28 +75,29 @@ in
     ssm-session-manager-plugin
     redis
     nodejs
+    git-crypt
 
 
     # lsp
-    elixir_ls
-    erlang-ls
+    elixir-ls
+    erlang-language-platform
     terraform-ls
     #rnix-lsp
-    nodePackages.dockerfile-language-server-nodejs
+    dockerfile-language-server-nodejs
     #nodePackages.vim-language-server
-    nodePackages.bash-language-server
-    nodePackages.yaml-language-server
+    bash-language-server
+    yaml-language-server
     #  todo Json ls and tailwindcss
 
     #linting
     rust-analyzer
     rustfmt
     hadolint
-    nixfmt-classic
+    nixfmt
     tflint
     # nodePackages.textlint
-    nodePackages.prettier
-    nodePackages.markdownlint-cli
+    prettier
+    markdownlint-cli
     erlfmt
     shellcheck
 
@@ -112,6 +113,5 @@ in
   # MAYBE MOVE TO SHELL/TERMINAL module
   programs.lsd = {
     enable = true;
-    enableAliases = true;
   };
 }

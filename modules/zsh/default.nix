@@ -37,7 +37,7 @@
       prompt.theme = "pure";
     };
 
-    initExtra = builtins.readFile ./functions.sh;
+    initContent = builtins.readFile ./functions.sh;
 
     sessionVariables = {
       DOCKER_BUILDKIT = 1;
