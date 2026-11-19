@@ -109,15 +109,6 @@
   };
 
   ############
-  # SERVICES #
-  ############
-
-  services.skhd = {
-    enable = true;
-    skhdConfig = builtins.readFile ./conf.d/skhd.conf;
-  };
-
-  ############
   # Homebrew #
   ############
 
