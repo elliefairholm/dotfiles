@@ -140,13 +140,13 @@
       "google-chrome"
       "adobe-acrobat-reader"
       "1password"
-      "docker"
+      "docker-desktop"
       "spotify"
       "windsurf"
       "insomnia"
       "slack"
       "insta360-studio"
-      "mullvadvpn"
+      "mullvad-vpn"
     ];
 
     masApps = {
