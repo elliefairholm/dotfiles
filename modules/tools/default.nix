@@ -3,7 +3,6 @@
   lib,
   writeShellScriptBin,
   nodejs,
-  devenv,
   ...
 }:
 let
@@ -49,7 +48,8 @@ in
 {
   #  TODO REVIEW ALL THESE PACKAGES
   # check https://github.com/jmackie/dotfiles/blob/main/modules/tools/default.nix
-  home.packages = [ devenv ] ++ (with pkgs; [
+  home.packages = (with pkgs; [
+    devenv
     claudeCode
     neovim-remote
     nerd-fonts.iosevka

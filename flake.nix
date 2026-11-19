@@ -9,15 +9,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
-    # devenv is pinned (not tracking `latest`) because its current `latest`
-    # bundles a nixd nightly that fails to build, and it follows its own pinned
-    # nixpkgs rather than our top-level one because it's version-sensitive: this
-    # devenv rev needs darwin.apple_sdk_11_0, which newer nixpkgs removed. This
-    # pin matches the combo the live system was built with. Revisit once devenv
-    # `latest` builds cleanly against current nixpkgs.
-    nixpkgs-devenv.url = "github:nixos/nixpkgs/b7ba7f9f45c5cd0d8625e9e217c28f8eb6a19a76";
-    devenv.url = "github:cachix/devenv/98b99188b1539c0d2a45e0a0a161a7b8e797caac";
-    devenv.inputs.nixpkgs.follows = "nixpkgs-devenv";
   };
 
   nixConfig = {
@@ -39,7 +30,6 @@
 
       "bosque" = let
         system = "aarch64-darwin";
-        devenv = inputs.devenv.packages.${system}.devenv;
         hostname = "bosque";
         common = [
           home-manager.darwinModules.home-manager
@@ -48,7 +38,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.elliefairholm = import ./home.nix;
-            home-manager.extraSpecialArgs = { inherit devenv; };
           }
         ];
       in darwin.lib.darwinSystem rec {

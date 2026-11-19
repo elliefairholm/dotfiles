@@ -1,4 +1,4 @@
-{ config, pkgs, lib, devenv, ... }: {
+{ config, pkgs, lib, ... }: {
 
   programs.home-manager.enable = true;
   home.stateVersion = "23.05";
