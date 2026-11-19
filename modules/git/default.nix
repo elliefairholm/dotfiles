@@ -80,6 +80,7 @@ in {
       ".direnv/"
       ".envrc"
       ".DS_Store"
+      ".claude/"
     ];
   };
 }
