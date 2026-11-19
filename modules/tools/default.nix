@@ -65,7 +65,7 @@ in
     tig
     tree
     peco
-    elixir
+    beamPackages.elixir
     terraform
     ngrok
     imagemagick
@@ -83,7 +83,7 @@ in
     erlang-language-platform
     terraform-ls
     #rnix-lsp
-    dockerfile-language-server-nodejs
+    dockerfile-language-server
     #nodePackages.vim-language-server
     bash-language-server
     yaml-language-server
