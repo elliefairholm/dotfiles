@@ -108,7 +108,11 @@ in
   programs.bat.enable = true;
   programs.fzf.enable = true;
   programs.gpg.enable = true;
-  programs.neovim.enable = true;
+  programs.neovim = {
+    enable = true;
+    withRuby = true;
+    withPython3 = true;
+  };
 
   # MAYBE MOVE TO SHELL/TERMINAL module
   programs.lsd = {
