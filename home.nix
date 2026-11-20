@@ -4,6 +4,7 @@
   home.stateVersion = "23.05";
 
   imports = [
+    ./modules/claude
     ./modules/gh
     ./modules/git
     ./modules/zsh
